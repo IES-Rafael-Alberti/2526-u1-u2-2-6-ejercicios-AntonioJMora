@@ -38,6 +38,8 @@ def calcular_propina(importe: float, calidad: str) -> tuple[float, float]:
         porcentaje = 0.15
     elif calidad == "regular":
         porcentaje = 0.1
+    else:
+        return(0.0, importe) #Para calidades invalidas
 
     propina = importe * porcentaje
     total = importe + propina
