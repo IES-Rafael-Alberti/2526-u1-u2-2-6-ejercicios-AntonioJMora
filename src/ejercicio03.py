@@ -30,13 +30,15 @@ def contar_digitos_pares_impares(numero: int) -> tuple[int, int]:
     # TODO: Implementar la función
     cantidad_pares = 0
     cantidad_impares = 0
-    if numero == 0:
-        cantidad_pares += 1
-        return (1,0)
-    elif numero % 2:
-        cantidad_impares += 1
-    elif numero // 2:
-        cantidad_pares +=1
+    numero = str(abs(numero))
+    for i in range(len(numero)):
+        num_int = int(numero[i])
+        if num_int == 0:
+            cantidad_pares +=1
+        elif num_int % 2 == 0:
+            cantidad_pares +=1
+        else:
+            cantidad_impares +=1
     
     return(cantidad_pares, cantidad_impares)
 
